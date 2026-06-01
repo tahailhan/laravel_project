@@ -1,5 +1,6 @@
-<footer class="app-footer">
-    <div class="float-end d-none d-sm-inline">Anything you want</div>
-    <strong>Copyright &copy; 2014-2026&nbsp;<a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.</strong>
-    All rights reserved.
+<footer class="admin-footer">
+    <div class="container-fluid px-3 px-lg-4">
+        <span>Copyright 2026 adminHMD. <br> Developed by <a target="_blank" class="fw-bold text-success" href="https://github.com/HasanMahmudDev">Md. Hasan Mahmud</a> • Distributed by <a target="_blank" class="fw-bold text-success" href="https://themewagon.com">ThemeWagon</a> </span>
+        <span>Professional dashboard template.</span>
+    </div>
 </footer>

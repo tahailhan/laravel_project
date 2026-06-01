@@ -1,40 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@yield('title', 'AdminLTE v4 | Dashboard')</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="adminHMD professional admin dashboard template">
+    <title>@yield('title', 'Dashboard | adminHMD')</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    @yield('meta')
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.css') }}" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" crossorigin="anonymous" />
-
-    @yield('styles')
+    @yield('head')
 </head>
+<body>
 
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-<div class="app-wrapper">
+<div class="admin-shell">
+    <div class="sidebar-backdrop" data-sidebar-close></div>
 
-    @include('admin.header')
+    @include('admin.sidemenu')
 
-    @include('admin.sidebar')
+    <div class="admin-main">
+        @include('admin.header')
 
-    <main class="app-main">
         @yield('content')
-    </main>
-    @include('admin.footer')
 
+        @include('admin.footer')
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script src="{{ asset('assets/admin/js/adminlte.js') }}"></script>
+
+<script src="{{ asset('assets/admin/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/main.js') }}"></script>
+
 @yield('scripts')
 </body>
 </html>
