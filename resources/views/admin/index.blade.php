@@ -1,24 +1,35 @@
 @extends('layouts.admin')
-@section('title') Admin Dasboard @endsection
+
+@section('title')
+    Admin Dashboard
+@endsection
+
 @section('content')
     <main class="dashboard-content">
         <div class="container-fluid px-3 px-lg-4 py-4">
+
             <div class="page-heading">
                 <div class="page-heading-copy">
                     <span class="page-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
                     <div>
                         <p class="eyebrow mb-1">Overview</p>
                         <h1 class="h3 mb-1">Dashboard</h1>
-                        <p class="text-muted mb-0">Monitor performance, sales, users, and support from one clean workspace.</p>
+                        <p class="text-muted mb-0">Monitor performance, sales, users, and support from one clean
+                            workspace.</p>
                     </div>
                 </div>
                 <div class="heading-actions">
-                    <button class="btn btn-outline-secondary btn-sm" type="button"><i class="bi bi-download" aria-hidden="true"></i> Export</button>
-                    <button class="btn btn-primary btn-sm" type="button"><i class="bi bi-file-earmark-plus" aria-hidden="true"></i> Create Report</button>
+                    <button class="btn btn-outline-secondary btn-sm" type="button">
+                        <i class="bi bi-download" aria-hidden="true"></i> Export
+                    </button>
+                    <button class="btn btn-primary btn-sm" type="button">
+                        <i class="bi bi-file-earmark-plus" aria-hidden="true"></i> Create Report
+                    </button>
                 </div>
             </div>
 
             <section class="row g-3 mt-1" aria-label="Dashboard metrics">
+
                 <div class="col-12 col-sm-6 col-xl-3">
                     <article class="metric-card metric-primary">
                         <div class="metric-top">
@@ -77,11 +88,15 @@
             </section>
 
             <section class="row g-3 mt-1">
+
                 <div class="col-12 col-xl-8">
                     <div class="panel">
                         <div class="panel-header">
                             <div>
-                                <h2 class="h5 mb-1 section-title"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i><span>Sales Performance</span></h2>
+                                <h2 class="h5 mb-1 section-title">
+                                    <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+                                    <span>Sales Performance</span>
+                                </h2>
                                 <p class="text-muted mb-0">Monthly revenue compared with operational targets.</p>
                             </div>
                             <a class="btn btn-light btn-sm" href="#">View Details</a>
@@ -102,15 +117,36 @@
                     <div class="panel h-100">
                         <div class="panel-header">
                             <div>
-                                <h2 class="h5 mb-1 section-title"><i class="bi bi-activity" aria-hidden="true"></i><span>Team Activity</span></h2>
+                                <h2 class="h5 mb-1 section-title">
+                                    <i class="bi bi-activity" aria-hidden="true"></i>
+                                    <span>Team Activity</span>
+                                </h2>
                                 <p class="text-muted mb-0">Recent operational updates.</p>
                             </div>
                         </div>
 
                         <div class="activity-list">
-                            <div class="activity-item"><span class="activity-dot bg-primary"></span><div><p class="mb-1 fw-semibold">New campaign launched</p><p class="text-muted small mb-0">Marketing team published the May offer.</p></div></div>
-                            <div class="activity-item"><span class="activity-dot bg-success"></span><div><p class="mb-1 fw-semibold">Payment batch cleared</p><p class="text-muted small mb-0">246 invoices were processed successfully.</p></div></div>
-                            <div class="activity-item"><span class="activity-dot bg-warning"></span><div><p class="mb-1 fw-semibold">Support queue rising</p><p class="text-muted small mb-0">Average first response time is 18 minutes.</p></div></div>
+                            <div class="activity-item">
+                                <span class="activity-dot bg-primary"></span>
+                                <div>
+                                    <p class="mb-1 fw-semibold">New campaign launched</p>
+                                    <p class="text-muted small mb-0">Marketing team published the May offer.</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-dot bg-success"></span>
+                                <div>
+                                    <p class="mb-1 fw-semibold">Payment batch cleared</p>
+                                    <p class="text-muted small mb-0">246 invoices were processed successfully.</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-dot bg-warning"></span>
+                                <div>
+                                    <p class="mb-1 fw-semibold">Support queue rising</p>
+                                    <p class="text-muted small mb-0">Average first response time is 18 minutes.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,19 +155,33 @@
             <section class="panel mt-3">
                 <div class="panel-header">
                     <div>
-                        <h2 class="h5 mb-1 section-title"><i class="bi bi-people" aria-hidden="true"></i><span>Recent Users</span></h2>
+                        <h2 class="h5 mb-1 section-title">
+                            <i class="bi bi-people" aria-hidden="true"></i>
+                            <span>Recent Users</span>
+                        </h2>
                         <p class="text-muted mb-0">Latest account activity across the workspace.</p>
                     </div>
                     <a class="btn btn-outline-secondary btn-sm" href="#">Manage Users</a>
                 </div>
+
                 <div class="table-responsive">
                     <table class="table align-middle mb-0">
-                        <thead><tr><th scope="col">User</th><th scope="col">Role</th><th scope="col">Team</th><th scope="col">Status</th><th scope="col">Joined</th><th scope="col" class="text-end">Action</th></tr></thead>
+                        <thead>
+                        <tr>
+                            <th scope="col">User</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Joined</th>
+                            <th scope="col" class="text-end">Action</th>
+                        </tr>
+                        </thead>
                         <tbody>
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                                    <img class="avatar-img avatar-sm" src="{{ asset('assets/admin/images/avatar/avatar-1.jpg') }}" alt="Sarah Ahmed">
+                                    <img class="avatar-img avatar-sm"
+                                         src="{{ asset('assets/admin/images/avatar/avatar-1.jpg') }}" alt="Sarah Ahmed">
                                     <div>
                                         <p class="fw-semibold mb-0">Sarah Ahmed</p>
                                         <p class="text-muted small mb-0">sarah@example.com</p>
@@ -144,10 +194,12 @@
                             <td>Jan 12, 2026</td>
                             <td class="text-end"><a class="btn btn-light btn-sm" href="#">View</a></td>
                         </tr>
+
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                                    <img class="avatar-img avatar-sm" src="{{ asset('assets/admin/images/avatar/avatar-2.jpg') }}" alt="Rafi Khan">
+                                    <img class="avatar-img avatar-sm"
+                                         src="{{ asset('assets/admin/images/avatar/avatar-2.jpg') }}" alt="Rafi Khan">
                                     <div>
                                         <p class="fw-semibold mb-0">Rafi Khan</p>
                                         <p class="text-muted small mb-0">rafi@example.com</p>
@@ -160,10 +212,12 @@
                             <td>Feb 03, 2026</td>
                             <td class="text-end"><a class="btn btn-light btn-sm" href="#">View</a></td>
                         </tr>
+
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                                    <img class="avatar-img avatar-sm" src="{{ asset('assets/admin/images/avatar/avatar-3.jpg') }}" alt="Nadia Islam">
+                                    <img class="avatar-img avatar-sm"
+                                         src="{{ asset('assets/admin/images/avatar/avatar-3.jpg') }}" alt="Nadia Islam">
                                     <div>
                                         <p class="fw-semibold mb-0">Nadia Islam</p>
                                         <p class="text-muted small mb-0">nadia@example.com</p>
@@ -176,10 +230,12 @@
                             <td>Mar 18, 2026</td>
                             <td class="text-end"><a class="btn btn-light btn-sm" href="#">View</a></td>
                         </tr>
+
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                                    <img class="avatar-img avatar-sm" src="{{ asset('assets/admin/images/avatar/avatar-4.jpg') }}" alt="Mina Torres">
+                                    <img class="avatar-img avatar-sm"
+                                         src="{{ asset('assets/admin/images/avatar/avatar-4.jpg') }}" alt="Mina Torres">
                                     <div>
                                         <p class="fw-semibold mb-0">Mina Torres</p>
                                         <p class="text-muted small mb-0">mina@example.com</p>
@@ -192,10 +248,12 @@
                             <td>Apr 07, 2026</td>
                             <td class="text-end"><a class="btn btn-light btn-sm" href="#">View</a></td>
                         </tr>
+
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                                    <img class="avatar-img avatar-sm" src="{{ asset('assets/admin/images/avatar/avatar-5.jpg') }}" alt="Jon Oliver">
+                                    <img class="avatar-img avatar-sm"
+                                         src="{{ asset('assets/admin/images/avatar/avatar-5.jpg') }}" alt="Jon Oliver">
                                     <div>
                                         <p class="fw-semibold mb-0">Jon Oliver</p>
                                         <p class="text-muted small mb-0">jon@example.com</p>

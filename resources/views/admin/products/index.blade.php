@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Categories
+    Products
 @endsection
 
 @section('content')
@@ -10,11 +10,11 @@
 
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div class="page-heading">
-                    <h1 class="h3 mb-0 text-gray-800">Category List</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Product List</h1>
                 </div>
-                <a href="{{ route('admin.categories.create') }}"
+                <a href="{{ route('admin.product.create') }}"
                    class="btn btn-primary d-flex align-items-center gap-2">
-                    <i class="bi bi-plus-circle"></i> Add New Category
+                    <i class="bi bi-plus-circle"></i> Add New Product
                 </a>
             </div>
 
@@ -29,7 +29,7 @@
                 <div class="panel-header">
                     <h2 class="h5 mb-0 section-title">
                         <i class="bi bi-table" aria-hidden="true"></i>
-                        <span>All Categories</span>
+                        <span>All Products</span>
                     </h2>
                 </div>
 
@@ -38,32 +38,32 @@
                         <table class="table table-hover align-middle mb-0">
                             <thead class="table-light">
                             <tr>
-                                <th style="width: 50px;">ID</th>
-                                <th style="width: 50px;">Parent</th>
+                                <th style="width: 60px;">ID</th>
+                                <th>Category</th>
                                 <th style="width: 80px;">Image</th>
                                 <th>Title</th>
-                                <th>Keywords</th>
-                                <th>Description</th>
-                                <th style="width: 100px;">Status</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Discount</th>
                                 <th style="width: 150px;" class="text-end">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @forelse($categories as $category)
+                            @forelse($products as $product)
                                 <tr>
-                                    <td><strong>#{{ $category->id }}</strong></td>
+                                    <td><strong>#{{ $product->id }}</strong></td>
 
                                     <td>
-    <span class="text-muted">
-        {{ $category->getParentsTree() }}
-    </span>
+                                        <span class="text-muted">
+                                            {{ $product->category ? $product->category->full_path : 'No Category' }}
+                                        </span>
                                     </td>
 
                                     <td>
-                                        @if($category->image)
-                                            <img src="{{ asset('storage/' . $category->image) }}"
-                                                 alt="{{ $category->title }}"
-                                                 width="55" height="55"
+                                        @if($product->image)
+                                            <img src="{{ asset('storage/' . $product->image) }}"
+                                                 alt="{{ $product->title }}"
+                                                 width="50" height="50"
                                                  class="rounded border shadow-sm"
                                                  style="object-fit: cover;">
                                         @else
@@ -71,33 +71,26 @@
                                         @endif
                                     </td>
 
-                                    <td><span class="fw-semibold text-heading">{{ $category->title }}</span></td>
+                                    <td><span class="fw-semibold text-heading">{{ $product->title }}</span></td>
 
-                                    <td><small class="text-muted">{{ Str::limit($category->keywords, 30) }}</small></td>
+                                    <td>{{ number_format($product->price, 2) }} $</td>
 
-                                    <td><small class="text-muted">{{ Str::limit($category->description, 40) }}</small>
-                                    </td>
+                                    <td>{{ $product->stock }}</td>
 
-                                    <td>
-                                        @if($category->status == 1)
-                                            <span class="badge bg-success-soft text-success px-2 py-1">True</span>
-                                        @else
-                                            <span class="badge bg-danger-soft text-danger px-2 py-1">False</span>
-                                        @endif
-                                    </td>
+                                    <td>%{{ $product->discount }}</td>
 
                                     <td class="text-end">
                                         <div class="d-flex justify-content-end gap-2">
 
-                                            <a href="{{ route('admin.categories.show', $category->id) }}" class="btn btn-sm btn-outline-info" title="Show">
+                                            <a href="{{ route('admin.product.show', $product->id) }}" class="btn btn-sm btn-outline-info" title="Show">
                                                 <i class="bi bi-eye"></i>
                                             </a>
 
-                                            <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-outline-secondary" title="Edit">
+                                            <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-sm btn-outline-secondary" title="Edit">
                                                 <i class="bi bi-pencil"></i>
                                             </a>
 
-                                            <form action="{{ route('admin.categories.destroy', $category->id) }}"
+                                            <form action="{{ route('admin.product.destroy', $product->id) }}"
                                                   method="POST" onsubmit="return confirm('Are you sure?')">
                                                 @csrf
                                                 @method('DELETE')
@@ -112,8 +105,8 @@
                             @empty
                                 <tr>
                                     <td colspan="8" class="text-center py-4 text-muted">
-                                        <i class="bi bi-folder-x display-6 mb-2 d-block"></i>
-                                        No categories found.
+                                        <i class="bi bi-box-seam display-6 mb-2 d-block"></i>
+                                        No products found.
                                     </td>
                                 </tr>
                             @endforelse
