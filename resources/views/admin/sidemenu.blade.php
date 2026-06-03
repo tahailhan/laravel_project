@@ -10,14 +10,9 @@
     </div>
 
     <nav class="sidebar-nav">
-        <a class="nav-link active" href="{{route('admin')}}" aria-current="page">
+        <a class="nav-link active" href="{{route('admin.dashboard')}}" aria-current="page">
             <span class="nav-icon"><i class="bi bi-house-door" aria-hidden="true"></i></span>
             <span class="nav-text">Homepage</span>
-        </a>
-
-        <a class="nav-link" href="#">
-            <span class="nav-icon"><i class="bi bi-person-gear" aria-hidden="true"></i></span>
-            <span class="nav-text">Admin</span>
         </a>
 
         <a class="nav-link" href="{{route('admin.categories.index')}}">
@@ -41,18 +36,13 @@
         </a>
 
         <a class="nav-link" href="#">
-            <span class="nav-icon"><i class="bi bi-bell" aria-hidden="true"></i></span>
-            <span class="nav-text">Alerts</span>
-        </a>
-
-        <a class="nav-link" href="#">
-            <span class="nav-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
-            <span class="nav-text">Modals</span>
-        </a>
-
-        <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
             <span class="nav-text">Contact</span>
+        </a>
+
+        <a class="nav-link" href="{{ route('admin.users.index') }}">
+            <span class="nav-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+            <span class="nav-text">Users</span>
         </a>
 
         <a class="nav-link" href="#">

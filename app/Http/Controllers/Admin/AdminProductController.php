@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
-
+use Illuminate\Support\Facades\Auth;
 class AdminProductController extends Controller
 {
     /**
@@ -54,8 +54,8 @@ class AdminProductController extends Controller
             $validated['image'] = $request->file('image')->store('products', 'public');
         }
 
-
-        $validated['user_id'] = 1;
+        
+        $validated['user_id'] = auth()->id();
 
         Product::create($validated);
 

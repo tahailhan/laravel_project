@@ -49,12 +49,15 @@
                     <span class="profile-name d-none d-sm-inline">Admin Taha</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Account settings</a></li>
+
                     <li>
-                        <hr class="dropdown-divider">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item" style="cursor: pointer;">
+                                Sign out
+                            </button>
+                        </form>
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
                 </ul>
             </div>
         </div>

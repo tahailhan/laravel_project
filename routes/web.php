@@ -1,28 +1,25 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminUserController;
 
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login', 'loginForm')->name('login');
+    Route::post('/login', 'login')->name('login.post');
+    Route::post('/logout', 'logout')->name('logout');
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/admin', [AdminHomeController::class, 'index'])->name('admin');
-/**
-Route::get('/admin/categories', [CategoryController::class, 'index'])->name('admin.categories.index');
-Route::get('/admin/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-Route::post('/admin/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-Route::get('/admin/categories/{category}', [CategoryController::class, 'show'])->name('admin.categories.show');
-Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-Route::put('/admin/categories/{category}/update', [CategoryController::class, 'update'])->name('admin.categories.update');
-Route::delete('/admin/categories/{category}/delete', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
-**/
 
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
 
-Route::prefix('admin')->name('admin.')->group(function () {
-
+    Route::get('/', [AdminHomeController::class, 'index'])->name('dashboard');
 
     Route::prefix('product')->name('product.')->controller(AdminProductController::class)->group(function () {
         Route::get('/', 'index')->name('index');
@@ -43,5 +40,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('/{category}/update', 'update')->name('update');
         Route::delete('/{category}', 'destroy')->name('destroy');
     });
+    Route::resource('users', AdminUserController::class);
 
 });

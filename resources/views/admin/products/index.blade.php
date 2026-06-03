@@ -9,13 +9,18 @@
         <div class="container-fluid px-3 px-lg-4 py-4">
 
             <div class="d-flex justify-content-between align-items-center mb-4">
+
                 <div class="page-heading">
                     <h1 class="h3 mb-0 text-gray-800">Product List</h1>
                 </div>
-                <a href="{{ route('admin.product.create') }}"
-                   class="btn btn-primary d-flex align-items-center gap-2">
-                    <i class="bi bi-plus-circle"></i> Add New Product
-                </a>
+
+                {{-- SADECE ADMIN ROLÜNE SAHİP KİŞİLER BU BUTONU GÖREBİLİR --}}
+                @if(auth()->check() && auth()->user()->hasRole('admin'))
+                    <a href="{{ route('admin.product.create') }}" class="btn btn-primary d-flex align-items-center gap-2">
+                        <i class="bi bi-plus-circle"></i> Add New Product
+                    </a>
+                @endif
+
             </div>
 
             @if(session('success'))
