@@ -25,6 +25,11 @@
             <span class="nav-text">Products</span>
         </a>
 
+        <a class="nav-link" href="{{ route('admin.orders.index') }}">
+            <span class="nav-icon"><i class="bi bi-cart-check" aria-hidden="true"></i></span>
+            <span class="nav-text">Orders</span>
+        </a>
+
         <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-star-half" aria-hidden="true"></i></span>
             <span class="nav-text">Reviews</span>
