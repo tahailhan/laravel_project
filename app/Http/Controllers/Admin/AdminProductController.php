@@ -54,7 +54,7 @@ class AdminProductController extends Controller
             $validated['image'] = $request->file('image')->store('products', 'public');
         }
 
-        
+
         $validated['user_id'] = auth()->id();
 
         Product::create($validated);

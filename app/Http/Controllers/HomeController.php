@@ -3,14 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $title = 'Home Page';
-        $message = 'Welcome to Laravel MVC example';
 
-        return view('front.home', compact('title', 'message'));
+        $products = Product::latest()->take(6)->get();
+
+        return view('front.index', compact('products'));
+    }
+
+    public function productDetail($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return view('front.product_detail', compact('product'));
     }
 }
