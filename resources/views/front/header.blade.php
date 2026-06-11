@@ -35,13 +35,8 @@
                         <small><i class="fa fa-home me-2"></i> My Dashboard</small>
                     </a>
                     <div class="dropdown-menu rounded">
-                        <a href="#" class="dropdown-item"> Login</a>
-                        <a href="#" class="dropdown-item"> Wishlist</a>
-                        <a href="#" class="dropdown-item"> My Cart</a>
-                        <a href="#" class="dropdown-item"> Notifications</a>
-                        <a href="#" class="dropdown-item"> Account Settings</a>
-                        <a href="#" class="dropdown-item"> My Account</a>
-                        <a href="#" class="dropdown-item"> Log Out</a>
+                        <a href="{{ route('login')}}" class="dropdown-item"> Login</a>
+                        <a href="{{ route('cart.index') }}" class="dropdown-item"> My Cart</a>
                     </div>
                 </div>
             </div>

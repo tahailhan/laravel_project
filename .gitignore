@@ -19,6 +19,10 @@
 /storage/*.key
 /storage/pail
 /vendor
+/TEMP
+/.ai
+/.agents
+/.gemini
 _ide_helper.php
 Homestead.json
 Homestead.yaml

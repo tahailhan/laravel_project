@@ -37,9 +37,12 @@
                                 <th>Product</th>
                                 <th>Qty</th>
                                 <th>Total</th>
+
                             </tr>
+
                             </thead>
                             <tbody>
+
                             @foreach($cartItems as $item)
                                 <tr>
                                     <td>{{ $item->product->title }}</td>
