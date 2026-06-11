@@ -23,6 +23,7 @@
 /.ai
 /.agents
 /.gemini
+/.github
 _ide_helper.php
 Homestead.json
 Homestead.yaml
